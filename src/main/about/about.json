@@ -1,0 +1,67 @@
+{
+    "about": {
+        "image": {
+            "url": "https://cdn.pixabay.com/photo/2016/11/09/16/24/virus-1812092_960_720.jpg",
+            "alt": "virus under microscope",
+            "attribution": {
+                "url": "https://pixabay.com",
+                "text": "pixabay.com"
+            }
+        },
+        "sections": [
+
+            {
+                "heading": "What are corona viruses?",
+                "details": "Coronaviruses are a type of virus. There are many different kinds, and some cause disease. A newly identified coronavirus, SARS-CoV-2, has caused a worldwide pandemic of respiratory illness, called COVID-19.",
+                "source": {
+                    "url": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus",
+                    "text": "Johns Hopkins"
+                }
+            }, {
+                "heading": "How does it spread?",
+                "details": "As of now, researchers know that the new coronavirus is spread through droplets released into the air when an infected person coughs or sneezes. The droplets generally do not travel more than a few feet, and they fall to the ground (or onto surfaces) in a few seconds — this is why social and physical distancing is effective in preventing the spread.",
+                "source": {
+                    "url": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus",
+                    "text": "Johns Hopkins"
+                }
+            }, {
+                "heading": "How did this new coronavirus spread to humans?",
+                "details": "COVID-19 appeared in Wuhan, a city in China, in December 2019. Although health officials are still tracing the exact source of this new coronavirus, early hypotheses thought it may be linked to a seafood market in Wuhan, China. Some people who visited the market developed viral pneumonia caused by the new coronavirus. A study that came out on Jan. 25, 2020, notes that the individual with the first reported case became ill on Dec. 1, 2019, and had no link to the seafood market. Investigations are ongoing as to how this virus originated and spread.",
+                "source": {
+                    "url": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus",
+                    "text": "Johns Hopkins"
+                }
+            }, {
+                "heading": "What is the incubation period?",
+                "details": "It appears that symptoms are showing up in people within 14 days of exposure to the virus.",
+                "source": {
+                    "url": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus",
+                    "text": "Johns hopkins"
+                }
+            }, {
+                "heading": "What are symptoms of COVID-19?",
+                "details": "COVID-19 symptoms include: <ul> <li> Cough </li> <li> Fever </li> <li> Shortness of breath </li> <li>  Muscle aches </li> <li>  Sore throat </li> <li> Unexplained loss of taste or smell </li> <li>  Diarrhea </li> <li>  Headache </li></ul>In rare cases, COVID-19 can lead to severe respiratory problems, kidney failure or death.If you have a fever or any kind of respiratory difficulty such as coughing or shortness of breath, call your doctor or a health care provider and explain your symptoms over the phone before going to the doctor’s office, urgent care facility or emergency room.",
+                "source": {
+                    "url": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus",
+                    "text": "Johns Hopkins"
+                }
+            }, {
+                "heading": "How is COVID-19 diagnosed?",
+                "details": "Diagnosis may be difficult with only a physical exam because mild cases of COVID-19 may appear similar to the flu or a bad cold. A laboratory test can confirm the diagnosis.",
+                "source": {
+                    "url": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus",
+                    "text": "Johns Hopkins"
+                }
+            }, {
+                "heading": "How is COVID-19 treated?",
+                "details": "As of now, there is not a specific treatment for the virus. People who become sick from COVID-19 should be treated with supportive measures: those that relieve symptoms. For severe cases, there may be additional options for treatment, including research drugs and therapeutics.",
+                "source": {
+                    "url": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus",
+                    "text": "Johns Hopkins"
+                }
+            }
+
+
+        ]
+    }
+}
