@@ -6,6 +6,7 @@ const context = React.createContext();
 function ContextProvider(props) {
   const [data, setData] = useState(null);
   const [pages, pageDispatch] = useReducer(paginationReducer, null);
+  const [activeMenu, setActiveMenu] = useState("dashboard");
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
@@ -21,21 +22,48 @@ function ContextProvider(props) {
   function nextChapterHandler(e) {
     const id = e.target.id;
     if (id === "last") {
-        pageDispatch({ type: "set-last-chapter"}); 
+      pageDispatch({ type: "set-last-chapter" });
     } else if (id === "next") {
-        pageDispatch({ type: "set-next-chapter"}); 
+      pageDispatch({ type: "set-next-chapter" });
     }
   }
   function previousChapterHandler(e) {
     const id = e.target.id;
     if (id === "first") {
-        pageDispatch({ type: "set-first-chapter"}); 
+      pageDispatch({ type: "set-first-chapter" });
     } else if (id === "previous") {
-        pageDispatch({ type: "set-previous-chapter"}); 
+      pageDispatch({ type: "set-previous-chapter" });
     }
   }
+
+  function menuClickHandler(e) {
+    const id = e.target.id;
+    console.log(id);
+    switch (id) {
+      case "dashboard":
+        setActiveMenu("dashboard");
+        break;
+      case "about":
+        setActiveMenu("about");
+        break;
+      case "visualization":
+        setActiveMenu("visualization");
+        break;
+    }
+  }
+
   return (
-    <context.Provider value={{ data, pages, currentPageHandler, nextChapterHandler, previousChapterHandler }}>
+    <context.Provider
+      value={{
+        data,
+        pages,
+        activeMenu,
+        currentPageHandler,
+        nextChapterHandler,
+        previousChapterHandler,
+        menuClickHandler,
+      }}
+    >
       {props.children}
     </context.Provider>
   );

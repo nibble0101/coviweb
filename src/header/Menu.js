@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
+import {context} from "../store";
 function Menu(props) {
+  const { menuClickHandler} = useContext(context);
   return (
-    <div className="menu">
+    <div className="menu" onClick = {menuClickHandler}>
       <ul>
         <li id="dashboard"> Dashboard </li>
         <li id="about"> About </li>
