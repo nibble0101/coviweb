@@ -8,7 +8,7 @@ function Menu(props) {
         <li id="dashboard"> Dashboard </li>
         <li id="about"> About </li>
         <li id="visualization"> Visualization </li>
-        <li> More </li>
+        <li id="press"> Press </li>
       </ul>
     </div>
   );

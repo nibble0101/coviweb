@@ -38,7 +38,6 @@ function ContextProvider(props) {
 
   function menuClickHandler(e) {
     const id = e.target.id;
-    console.log(id);
     switch (id) {
       case "dashboard":
         setActiveMenu("dashboard");
@@ -48,6 +47,9 @@ function ContextProvider(props) {
         break;
       case "visualization":
         setActiveMenu("visualization");
+        break;
+      case "press":
+        setActiveMenu("press");
         break;
     }
   }
