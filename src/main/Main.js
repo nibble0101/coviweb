@@ -3,7 +3,8 @@ import Display from "./dashboard/Display";
 
 
 function Main(props){
-    return <Display />
+    
+    return <Display/>
 
 }
 

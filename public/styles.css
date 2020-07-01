@@ -61,7 +61,7 @@ body {
   padding: 1em;
   background-color: #14121f;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 500ms ease-in-out;
+  transition: box-shadow 500ms ease-in-out ;
 }
 .main .country:hover {
   box-shadow: 20px 30px 15px rgba(0, 0, 0, 0.4);

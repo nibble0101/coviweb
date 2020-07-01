@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Country from "./Country";
 import { context } from "../../store";
 import Pagination from "../pagination/Pagination";
@@ -16,10 +16,9 @@ function Display(props) {
   return (
     <React.Fragment>
       <div className="main">
-        {data &&
-          countries &&
+        {countries &&
           countries.map((country, i) => {
-            return <Country country={country} key={"country_" + i} />;
+            return <Country country={country} key={Math.random()} />;
           })}
       </div>
       <Pagination />

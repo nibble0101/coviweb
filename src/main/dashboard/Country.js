@@ -1,7 +1,8 @@
 import React from "react";
 import Zoom from "react-reveal/Zoom";
 
-function Country({ country }) {
+function Country(props) {
+  const { country } = props;
   return (
     <Zoom>
       <div className="country">
@@ -11,10 +12,11 @@ function Country({ country }) {
               src={country.countryInfo.flag}
               alt="Country flag"
               width="100px"
-            ></img>
+            />
           </span>
           <span className="country-name">{country.country}</span>
         </p>
+
         <p className="confirmed">
           <span className="label">Confirmed cases: </span>{" "}
           <span className="number">{country.cases}</span>
