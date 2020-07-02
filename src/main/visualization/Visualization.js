@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useRef } from "react";
+import React, { useEffect, useContext } from "react";
 import * as d3 from "d3";
 import * as topojson from "topojson";
 import Zoom from "react-reveal/Zoom";
@@ -26,10 +26,7 @@ function Visualization(props) {
     const formatDateTime = d3.timeFormat("%B %d, %Y  %H:%M:%S %p");
     const dateToday = new Date();
     const wrapper = d3.select("#visualization-wrapper");
-    wrapper
-      .append("h1")
-      .attr("class", "main-header")
-      .text("Covid-19 World Statistics");
+    
     const toolTip = wrapper.append("div").attr("class", "tooltip");
     const svg = wrapper
       .append("svg")
@@ -163,6 +160,7 @@ function Visualization(props) {
   }, []);
   return (
     <Zoom>
+      <h1 className = "main-header"> Covid-19 World Statistics </h1>
       <div id="visualization-wrapper"></div>
     </Zoom>
   );

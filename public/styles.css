@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -160,7 +161,7 @@ body {
 }
 .about-section .image-section img {
   display: block;
-  width: 100%;
+  width: 60%;
   height: auto;
   padding: 1em 0;
   margin: auto;
@@ -199,4 +200,112 @@ body {
 }
 .footer .footer-data-source a:hover {
   color: yellow;
+}
+.press{
+    width: 65%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+}
+.press h1{
+    font-weight: 100;
+    padding: 1em;
+}
+.new-york-times{
+    background-color: #14121f;
+    margin: 1em 0;
+}
+.new-york-times h2{
+    padding: 1em 0; 
+    font-weight: 100;   
+    text-align: center;
+    color: #6cd6e6;
+}
+
+.new-york-times img{
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 1em;
+}
+.new-york-times .article{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 0.2em;
+}
+.new-york-times .article-source{
+    text-align: center;
+    padding: 0 0.5em;
+}
+.new-york-times .publication-date{
+    text-align: center;
+    padding:0 0.5em 1em 0.5em;
+}
+.new-york-times .publication-date span{
+    color: #6cd6e6;
+}
+.new-york-times .article-source a{
+    text-decoration: none;
+    color: #6cd6e6;
+    transition: color 500ms ease-in-out;
+}
+.new-york-times .article-source a:hover{
+    color: yellow;
+}
+.new-york-times .paragraph{
+    line-height: 1.8em;
+    padding: 1em;
+}
+.new-york-times .paragraph a{
+    color: #6cd6e6;
+    font-family: 'Poiret One', cursive;
+    transition: color 500ms ease-in-out;
+}
+.new-york-times .paragraph  a:hover{
+    color: yellow;
+}
+.new-york-times .paragraph a{
+    text-decoration: none;
+}
+/* Displaying scroll bar */
+@media only screen and (max-width: 1050px){
+    #visualization-wrapper{
+        overflow-x: scroll;
+    } 
+ 
+ }
+
+@media only screen and (max-width: 950px){
+    .main{
+        grid-template-columns: 1fr 1fr;
+        height: auto;
+    }
+    .about-section{
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 660px){
+    .main{
+        grid-template-columns:  1fr;
+        height: auto;
+    }
+    .pagination button{
+        padding: 0.1em;
+        margin: 1em 0em;
+    }
+ .pagination .previous button,
+ .pagination .next button{
+      margin: initial;
+}
+.about-section .image-section img{
+    width: 100%;
+}
+.press{
+    width: 90%;
+}
 }
