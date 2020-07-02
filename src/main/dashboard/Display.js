@@ -21,7 +21,7 @@ function Display(props) {
             return <Country country={country} key={Math.random()} />;
           })}
       </div>
-      <Pagination />
+      {countries && <Pagination />}
     </React.Fragment>
   );
 }

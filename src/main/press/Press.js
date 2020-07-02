@@ -13,7 +13,6 @@ function Press(props) {
           articles.docs.map((article) => {
             return <NewYorkTimes article={article} key={Math.random()} />;
           })}
-        <p>More</p>
       </div>
     </Zoom>
   );
