@@ -49,7 +49,9 @@ body {
 .header .menu ul li:hover {
   color: yellow;
 }
-
+.hamburger-menu-icon{
+    display: none;
+}
 .main {
   padding: 1em;
   display: grid;
@@ -315,5 +317,48 @@ body {
         width: auto;
         margin: 0 0.2em;
         padding: 0 0.2em;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .header .menu ul{
+        display: none;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+       
+    }
+
+    .hamburger-menu-icon{
+        display: block;
+        z-index: 20;
+        cursor: pointer;
+        margin: 0 1em;
+    }
+    .header .menu ul.display-menu{
+        opacity: 1;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        background-color: #131418;
+        
+    }
+    .header .menu ul.display-menu li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+    }
+    .header .menu ul.display-menu li{
+        transition: color 1000ms ease-in-out;
+    }
+    .header .menu ul.display-menu li:hover{
+        color: whitesmoke;
     }
 }
