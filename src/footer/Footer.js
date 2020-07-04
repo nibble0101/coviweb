@@ -1,10 +1,10 @@
 import React from "react";
 import {timeFormat} from "d3";
-const url = "https://disease.sh";
+const url =  "https://disease.sh";
 function Footer(props) {
   const date = new Date();
   const year = date.getFullYear();
-  const formatDateTime = timeFormat("%B %d, %Y  %H:%M:%S %p");
+  const formatDateTime = timeFormat("%B %d, %Y  %H:%M:%S %p"); 
   return (
     <footer className="footer">
       <p className="footer-data-source">
