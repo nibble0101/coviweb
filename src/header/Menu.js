@@ -11,7 +11,7 @@ function Menu(props) {
   });
   return (
     <div className="menu" >
-      <ul id = "menu" ref = {myRef} onClick = {menuClickHandler}>
+      <ul id = "menu" ref = {myRef} onClick = {(e) => {menuClickHandler(e); hambugerClickHandler() }}>
         <li id="dashboard"> Dashboard </li>
         <li id="about"> About </li>
         <li id="visualization"> Visualization </li>
