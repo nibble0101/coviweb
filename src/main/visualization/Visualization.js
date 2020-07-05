@@ -33,8 +33,6 @@ function Visualization(props) {
       .attr("width", width + padLeft + padRight)
       .attr("height", height + padTop + padBottom);
 
-    
-
       function mouseoverHandler() {
         d3.select(this).style("fill", "#303145");
         const name = d3.select(this).attr("name");

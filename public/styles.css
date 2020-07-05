@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -20,7 +20,9 @@ body {
   color: var(--body-font-color);
   font-family: "Raleway", sans-serif;
   font-weight: 100;
+  
 }
+
 .header {
   background-color: var(--box-color);
   display: flex;
@@ -36,6 +38,31 @@ body {
   color: indianred;
   font-weight: bolder;
 }
+.header .global-cases {
+  height: 60px;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 10px #14121f;
+}
+.header .label{
+    color: #46cf73;
+}
+.header .global-cases-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header .global-cases-wrapper p{
+    padding: 1em;
+}
+.header .global:nth-child(1) {
+  animation: text-scroll-animation 15s 3000ms infinite;
+}
+
+.header .global {
+  padding: 0 10px;
+  text-align: center;
+  line-height: 60px;
+}
 .header .menu ul {
   display: flex;
 }
@@ -49,22 +76,22 @@ body {
 .header .menu ul li:hover {
   color: yellow;
 }
-.hamburger-menu-icon{
-    display: none;
+.hamburger-menu-icon {
+  display: none;
 }
 .main {
   padding: 1em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
-  height: 400px; /* This is to remove the jumping effect */
+  height: 400px; /*This is to remove the jumping effect */
 }
 
 .main .country {
   padding: 1em;
   background-color: #14121f;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.4);
-  transition: box-shadow 500ms ease-in-out ;
+  transition: box-shadow 500ms ease-in-out;
 }
 .main .country:hover {
   box-shadow: 20px 30px 15px rgba(0, 0, 0, 0.4);
@@ -203,162 +230,190 @@ body {
 .footer .footer-data-source a:hover {
   color: yellow;
 }
-.press{
-    width: 65%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 800px;
+.press {
+  width: 65%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
 }
-.press h1{
-    font-weight: 100;
-    padding: 1em;
+.press h1 {
+  font-weight: 100;
+  padding: 1em;
 }
-.new-york-times{
-    background-color: #14121f;
-    margin: 1em 0;
+.new-york-times {
+  background-color: #14121f;
+  margin: 1em 0;
 }
-.new-york-times h2{
-    padding: 1em 0; 
-    font-weight: 100;   
-    text-align: center;
-    color: #6cd6e6;
+.new-york-times h2 {
+  padding: 1em 0;
+  font-weight: 100;
+  text-align: center;
+  color: #6cd6e6;
 }
 
-.new-york-times img{
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 1em;
+.new-york-times img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 1em;
 }
-.new-york-times .article{
+.new-york-times .article {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   gap: 0.2em;
 }
-.new-york-times .article-source{
-    text-align: center;
-    padding: 0 0.5em;
+.new-york-times .article-source {
+  text-align: center;
+  padding: 0 0.5em;
 }
-.new-york-times .publication-date{
-    text-align: center;
-    padding:0 0.5em 1em 0.5em;
+.new-york-times .publication-date {
+  text-align: center;
+  padding: 0 0.5em 1em 0.5em;
 }
-.new-york-times .publication-date span{
-    color: #6cd6e6;
+.new-york-times .publication-date span {
+  color: #6cd6e6;
 }
-.new-york-times .article-source a{
-    text-decoration: none;
-    color: #6cd6e6;
-    transition: color 500ms ease-in-out;
+.new-york-times .article-source a {
+  text-decoration: none;
+  color: #6cd6e6;
+  transition: color 500ms ease-in-out;
 }
-.new-york-times .article-source a:hover{
-    color: yellow;
+.new-york-times .article-source a:hover {
+  color: yellow;
 }
-.new-york-times .paragraph{
-    line-height: 1.8em;
-    padding: 1em;
+.new-york-times .paragraph {
+  line-height: 1.8em;
+  padding: 1em;
 }
-.new-york-times .paragraph a{
-    color: #6cd6e6;
-    font-family: 'Poiret One', cursive;
-    transition: color 500ms ease-in-out;
+.new-york-times .paragraph a {
+  color: #6cd6e6;
+  font-family: "Poiret One", cursive;
+  transition: color 500ms ease-in-out;
 }
-.new-york-times .paragraph  a:hover{
-    color: yellow;
+.new-york-times .paragraph a:hover {
+  color: yellow;
 }
-.new-york-times .paragraph a{
-    text-decoration: none;
+.new-york-times .paragraph a {
+  text-decoration: none;
 }
 /* Displaying scroll bar */
-@media only screen and (max-width: 1050px){
-    #visualization-wrapper{
-        overflow-x: scroll;
-    } 
- 
- }
-
-@media only screen and (max-width: 950px){
-    .main{
-        grid-template-columns: 1fr 1fr;
-        height: auto;
-    }
-    .about-section{
-        width: auto;
-    }
+@media only screen and (max-width: 1050px) {
+  #visualization-wrapper {
+    overflow-x: scroll;
+  }
 }
 
-@media only screen and (max-width: 660px){
-    .main{
-        grid-template-columns:  1fr;
-        height: auto;
-    }
-    .pagination button{
-        padding: 0.1em;
-        margin: 1em 0em;
-    }
- .pagination .previous button,
- .pagination .next button{
-      margin: initial;
+@media only screen and (max-width: 950px) {
+  .main {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
+  .about-section {
+    width: auto;
+  }
 }
-.about-section .image-section img{
+
+@media only screen and (max-width: 660px) {
+  .main {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .pagination button {
+    padding: 0.1em;
+    margin: 1em 0em;
+  }
+  .pagination .previous button,
+  .pagination .next button {
+    margin: initial;
+  }
+  .about-section .image-section img {
     width: 100%;
-}
-.press{
+  }
+  .press {
     width: 90%;
-}
-}
-
-@media only screen and (max-width: 450px){
-    .pagination p button{
-        width: auto;
-        margin: 0 0.2em;
-        padding: 0 0.2em;
-    }
+  }
 }
 
+@media only screen and (max-width: 450px) {
+  .pagination p button {
+    width: auto;
+    margin: 0 0.2em;
+    padding: 0 0.2em;
+  }
+}
+@media only screen and (max-width: 580px){
+ 
+.header .global-cases-wrapper{
+    display: none;
+}
+}
+@media screen and (max-width: 800px) {
+  .header .menu ul {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
-@media screen and (max-width: 600px){
-    .header .menu ul{
-        display: none;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-       
-    }
+  .hamburger-menu-icon {
+    display: block;
+    z-index: 20;
+    cursor: pointer;
+    margin: 0 1em;
+  }
+  .header .menu ul.display-menu {
+    opacity: 1;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background-color: #131418;
+  }
+  .header .menu ul.display-menu li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+  }
+  .header .menu ul.display-menu li {
+    transition: color 1000ms ease-in-out;
+  }
+  .header .menu ul.display-menu li:hover {
+    color: whitesmoke;
+  }
+}
 
-    .hamburger-menu-icon{
-        display: block;
-        z-index: 20;
-        cursor: pointer;
-        margin: 0 1em;
-    }
-    .header .menu ul.display-menu{
-        opacity: 1;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        z-index: 10;
-        background-color: #131418;
-        
-    }
-    .header .menu ul.display-menu li{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1em;
-    }
-    .header .menu ul.display-menu li{
-        transition: color 1000ms ease-in-out;
-    }
-    .header .menu ul.display-menu li:hover{
-        color: whitesmoke;
-    }
+/* Animation of global cases */
+
+@keyframes text-scroll-animation {
+  0% {
+    margin-top: 0px;
+  }
+  17% {
+    margin-top: -60px;
+  }
+  34% {
+    margin-top: -120px;
+  }
+  51% {
+    margin-top: -180px;
+  }
+  68% {
+    margin-top: -120px;
+  }
+  85% {
+    margin-top: -60px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+ 
 }
