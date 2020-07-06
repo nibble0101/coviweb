@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useReducer } from "react";
 import {json} from "d3";
 import { paginationReducer } from "./page-reducer";
-import key from "./main/press/api-key";
+// import key from "./main/press/api-key";
 
 const urlPress = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=health&fq=headline:(\"covid-19\")&api-key=";
 const urlCountries = "https://disease.sh/v2/countries";
