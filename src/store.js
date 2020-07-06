@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useReducer } from "react";
 import {json} from "d3";
 import { paginationReducer } from "./page-reducer";
-// import key from "./main/press/api-key";
+import key from "./main/press/api-key";
 
 const urlPress = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=health&fq=headline:(\"covid-19\")&api-key=";
 const urlCountries = "https://disease.sh/v2/countries";
@@ -16,7 +16,7 @@ function ContextProvider(props) {
   const [aggregateData, setAggregateData] = useState(null);
   const [articles, setArticles] = useState(null);
   useEffect(() => {
-    Promise.all([json(urlCountries), json(urlAggregate), json(urlMap), json(urlPress + API_KEY)])
+    Promise.all([json(urlCountries), json(urlAggregate), json(urlMap), json(urlPress + process.env.REACT_APP_API_KEY)])
     .then(data => {
         pageDispatch({ type: "set-pages", payload: data[0].length });
         setData(data[0]);
