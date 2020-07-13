@@ -10,6 +10,10 @@ Covid-19 data displayed in this application is obtained from [NOVEL COVID-19 API
 
 In addition to using HTML, CSS and React.js for building this project, i have also used [d3.js](https://d3js.org/) for data visualization and [react-reveal](https://www.react-reveal.com/) for animation. For a full list of dependencies, check the package.json file.
 
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
 ## Live Project
 
 The project is hosted live [Here](https://coviweb.netlify.app/) on Netlify.
