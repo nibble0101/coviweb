@@ -23,6 +23,7 @@ function ContextProvider(props) {
         setAggregateData(data[1]);
         setMapData(data[2]);
         setArticles(data[3].response)
+        console.log(data[3])
     }).catch(error => console.log(error.message));
   }, []);
   function currentPageHandler(e) {
