@@ -1,14 +1,17 @@
 import React from "react";
 import { timeFormat } from "d3";
 const url = "https://www.nytimes.com/";
+const fallBackImage = "https://cdn.pixabay.com/photo/2020/03/08/23/23/coronavirus-4914026_960_720.jpg"
 function NewYorkTimes(props) {
   const formatDateTime = timeFormat("%B %d, %Y  %H:%M:%S %p");
+  const {multimedia } = props.article
+  const fullUrl = multimedia.length ? url + multimedia[0].url: fallBackImage
   return (
     <div className="new-york-times">
       <h2 className="article-title">{props.article.headline.print_headline}</h2>
       <div className="article">
         <p>
-          <img src={url + props.article.multimedia[0].url} alt="Covid" />
+          <img src={fullUrl} alt="Covid" />
         </p>
         <p className="paragraph">
           {props.article.lead_paragraph}

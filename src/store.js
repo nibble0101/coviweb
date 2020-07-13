@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useReducer } from "react";
 import {json} from "d3";
 import { paginationReducer } from "./page-reducer";
-// import key from "./main/press/api-key";
 
 const urlPress = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=health&fq=headline:(\"covid-19\")&api-key=";
 const urlCountries = "https://disease.sh/v2/countries";
@@ -23,7 +22,6 @@ function ContextProvider(props) {
         setAggregateData(data[1]);
         setMapData(data[2]);
         setArticles(data[3].response)
-        console.log(data[3])
     }).catch(error => console.log(error.message));
   }, []);
   function currentPageHandler(e) {
