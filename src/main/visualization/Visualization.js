@@ -14,14 +14,17 @@ const graphParams = {
   padRight: 50,
 };
 const { width, height, padTop, padBottom, padLeft, padRight } = graphParams;
-const legendParams = {
-  width: 200,
-  height: 20,
-};
+// const legendParams = {
+//   width: 200,
+//   height: 20,
+// };
 
 function Visualization(props) {
   const { data, mapData } = useContext(context);
   useEffect(() => {
+    if(!data || !mapData){
+        return;
+    }
     const formatDate = d3.timeFormat("%B %d, %Y");
     const formatDateTime = d3.timeFormat("%B %d, %Y  %H:%M:%S %p");
     const dateToday = new Date();
@@ -155,7 +158,7 @@ function Visualization(props) {
       })
       .on("mouseover", mouseoverHandler)
       .on("mouseout", mouseoutHandler);
-  }, []);
+  }, [data, mapData]);
   return (
     <Zoom>
       <h1 className = "main-header"> Covid-19 World Statistics </h1>

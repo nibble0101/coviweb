@@ -70,11 +70,19 @@ body {
   list-style-type: none;
   padding: 0 1em;
   cursor: pointer;
-  color: #6cd6e6;
-  transition: color 500ms ease-in-out;
 }
-.header .menu ul li:hover {
+.header .menu ul li a{
+    color: #6cd6e6;
+    transition: color 500ms ease-in-out;
+    text-decoration: none;
+   
+}
+.header .menu ul li a:hover {
   color: yellow;
+}
+.header .menu .active-bg{
+    color: #46cf73;
+    color: whitesmoke;
 }
 .hamburger-menu-icon {
   display: none;
@@ -171,6 +179,8 @@ body {
   color: whitesmoke;
   width: 70%;
   margin: auto;
+  font-weight: 500;
+  font-size: 1.2em;
 }
 .about-section .covid-text {
   color: rgb(128, 52, 52);
@@ -238,6 +248,8 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 800px;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 .press h1 {
   font-weight: 100;
