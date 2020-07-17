@@ -312,7 +312,22 @@ body {
 .new-york-times .paragraph a {
   text-decoration: none;
 }
-/* Displaying scroll bar */
+
+/* Styling scroll bar*/
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: #bac390;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #14121f;
+    border-radius: 10px;
+}
+
+/* Displaying scroll bar for Choropleth map to fit*/
 @media only screen and (max-width: 1050px) {
   #visualization-wrapper {
     overflow-x: scroll;
