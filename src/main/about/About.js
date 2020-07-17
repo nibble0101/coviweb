@@ -3,6 +3,7 @@ import * as aboutData from "./about.json";
 import Image from "./Image";
 import Section from "./Section";
 import Zoom from "react-reveal/Zoom";
+
 const { image, sections } = aboutData.about;
 function About(props) {
   return (

@@ -8,7 +8,7 @@ Covid-19 data displayed in this application is obtained from [NOVEL COVID-19 API
 
 ## Dependencies
 
-In addition to using HTML, CSS and React.js for building this project, i have also used [d3.js](https://d3js.org/) for data visualization and [react-reveal](https://www.react-reveal.com/) for animation. For a full list of dependencies, check the package.json file.
+In addition to using HTML, CSS and React.js for building this project, i have also used [d3.js](https://d3js.org/) for data visualization, [react-router-dom](https://reactrouter.com/web/guides/quick-start) for managing the routes and [react-reveal](https://www.react-reveal.com/) for animation. For a full list of dependencies, check the package.json file.
 
 ## License
 
