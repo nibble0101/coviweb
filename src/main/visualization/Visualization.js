@@ -14,10 +14,6 @@ const graphParams = {
   padRight: 50,
 };
 const { width, height, padTop, padBottom, padLeft, padRight } = graphParams;
-// const legendParams = {
-//   width: 200,
-//   height: 20,
-// };
 
 function Visualization(props) {
   const { data, mapData } = useContext(context);
@@ -105,10 +101,6 @@ function Visualization(props) {
         toolTip.select("h2").remove();
         toolTip.selectAll("div").remove();
       }
-
-
-
-
 
     const colorScale = d3.scaleSequential();
     const projection = d3.geoNaturalEarth1().scale(150);

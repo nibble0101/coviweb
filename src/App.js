@@ -13,13 +13,9 @@ function App() {
       <Router>
         <Header />
         {!data && <Loader />}
-        <Main />
+        {data && <Main />}
         {data && <Footer />}
       </Router>
-      {/* <Header />
-      {!data && <Loader />}
-      <Main />
-      {data && <Footer />} */}
     </React.Fragment>
   );
 }

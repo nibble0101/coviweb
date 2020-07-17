@@ -15,7 +15,7 @@ function Footer(props) {
         Retrieval Date: {ref.current}
       </p>
       <p className="footer-copyright">
-        Copyright {"\u00A9"} Joe Nibble {year > 2020 ? `2020 - ${year}` : year}
+        Copyright {"\u00A9"} Joseph Mawa {year > 2020 ? `2020 - ${year}` : year}
       </p>
     </footer>
   );

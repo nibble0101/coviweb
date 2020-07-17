@@ -82,7 +82,7 @@ body {
 }
 .header .menu .active-bg{
     color: #46cf73;
-    color: whitesmoke;
+    font-weight: 1000;
 }
 .hamburger-menu-icon {
   display: none;
