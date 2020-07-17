@@ -8,7 +8,7 @@ function Menu(props) {
   const hambugerClickHandler = React.useCallback(() => {
     setIsOpen(!isOpen);
     document.getElementById("menu").classList.toggle("display-menu")
-  });
+  }, [isOpen]);
   return (
     <div className="menu" >
       <ul id = "menu" ref = {myRef} onClick = {(e) => {menuClickHandler(e); hambugerClickHandler() }}>
