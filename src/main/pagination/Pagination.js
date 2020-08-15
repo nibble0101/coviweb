@@ -25,7 +25,7 @@ function Pagination(props) {
   }
   return (
     <div className="pagination">
-      <h1 className="title">Pages</h1>
+      <h1 className="title">PAGES</h1>
       <section className="controls">
         <Zoom>
           <p className="previous " onClick={previousChapterHandler}>

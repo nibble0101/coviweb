@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Zoom from "react-reveal/Zoom";
 import NewYorkTimes from "./NewYorkTimes";
+import LoadMoreArticles from "./LoadMoreArticles";
 import { context } from "../../store";
 
 function Press(props) {
@@ -13,6 +14,7 @@ function Press(props) {
           articles.docs.map((article) => {
             return <NewYorkTimes article={article} key={Math.random()} />;
           })}
+        <LoadMoreArticles />
       </div>
     </Zoom>
   );
