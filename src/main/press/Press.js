@@ -8,7 +8,7 @@ function Press(props) {
   return (
     <Zoom>
       <div className = "press">
-        <h1> Covid-19 related articles from New York Times </h1>
+        <h1> <span className = "covid-text">Covid-19</span> related articles from New York Times </h1>
         {articles &&
           articles.docs.map((article) => {
             return <NewYorkTimes article={article} key={Math.random()} />;

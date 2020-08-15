@@ -272,6 +272,9 @@ body {
 .footer-copyright a:hover{
     color: yellow;
 }
+.footer-copyright .copyright-symbol{
+    color:burlywood;
+}
 .press {
   width: 65%;
   margin: auto;
@@ -286,6 +289,9 @@ body {
 .press h1 {
   font-weight: 100;
   padding: 1em;
+}
+.press h1 .covid-text{
+    color: brown;
 }
 .new-york-times {
   background-color: #14121f;

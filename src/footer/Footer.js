@@ -28,7 +28,7 @@ function Footer(props) {
         </p>
       </div>
       <p className="footer-copyright">
-        Copyright {"\u00A9"} <a href = "https://github.com/nibble0101"> Joseph Mawa {" "} </a> {year > 2020 ? `2020 - ${year}` : year}
+        Copyright <span className = "copyright-symbol"> {"\u00A9"} </span>  <a href = "https://github.com/nibble0101"> Joseph Mawa {" "} </a> {year > 2020 ? `2020 - ${year}` : year}
       </p>
     </footer>
   );
