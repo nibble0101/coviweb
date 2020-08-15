@@ -35,7 +35,7 @@ function NewYorkTimes(props) {
         </a>
       </p>
       <p className="publication-date">
-        Published on:
+        Published on:{" "}
         <span>
           {formatDateTime(new Date(Date.parse(props.article.pub_date)))}
         </span>

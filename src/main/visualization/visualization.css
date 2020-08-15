@@ -5,6 +5,9 @@
   padding: 1em 0 0 0;
 }
 
+.covid-text{
+    color: brown;
+}
 svg {
   display: block;
   margin: 1em auto;
