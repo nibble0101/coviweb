@@ -287,8 +287,12 @@ body {
   justify-content: center;
   align-items: center;
   max-width: 800px;
+  min-height: 100vh;
   font-size: 1.2em;
   font-weight: 500;
+}
+.press-wrapper{
+    min-height: 100vh; /* This ensures press has a min-height of 100vh when data is being fetched*/
 }
 .press h1 {
   font-weight: 100;
@@ -354,7 +358,20 @@ body {
 .new-york-times .paragraph a {
   text-decoration: none;
 }
+.load-more-articles button{
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 10px;
+    background-color: var(--box-color);
+    color: whitesmoke;
+    border: 1px solid transparent;
+    transition: background-color 1000ms linear, color 1000ms linear;
+}
 
+.load-more-articles button:hover{
+    color: burlywood;
+    background-color: #020202;
+}
 /* Styling scroll bar*/
 
 ::-webkit-scrollbar{

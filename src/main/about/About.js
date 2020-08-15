@@ -2,17 +2,18 @@ import React from "react";
 import * as aboutData from "./about.json";
 import Image from "./Image";
 import Section from "./Section";
-import Zoom from "react-reveal/Zoom";
+import Fade from 'react-reveal/Fade';
+
 
 const { image, sections } = aboutData.about;
 function About(props) {
   return (
-    <Zoom>
+    <Fade>
       <div className="about-section">
         <Image image={image} />
         <Section sections={sections} />
       </div>
-    </Zoom>
+    </Fade>
   );
 }
 
