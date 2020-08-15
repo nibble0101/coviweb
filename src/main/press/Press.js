@@ -20,7 +20,7 @@ function Press(props) {
   useEffect(() => {
     if (!page) {
       const cachedData = JSON.parse(localStorage.getItem("articles"));
-      if (cachedData.length) {
+      if (cachedData && cachedData.length) {
         setArticles((prevArticles) => [
           ...prevArticles,
           ...cachedData
