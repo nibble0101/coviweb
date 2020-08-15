@@ -24,13 +24,17 @@ function Pagination(props) {
     }
   }
   return (
-    <div className="pagination" >
+    <div className="pagination">
       <h1 className="title">Pages</h1>
       <section className="controls">
         <Zoom>
           <p className="previous " onClick={previousChapterHandler}>
-            <button id="first"> {"<"} </button>
-            <button id="previous"> {"<<"} </button>
+            <button >
+              <i className="fas fa-angle-double-left" id="first"></i>
+            </button>
+            <button >
+              <i className="fas fa-angle-left" id="previous"></i>
+            </button>
           </p>
         </Zoom>
 
@@ -40,8 +44,14 @@ function Pagination(props) {
 
         <Zoom>
           <p className="next" onClick={nextChapterHandler}>
-            <button id="next"> {">>"} </button>
-            <button id="last"> {">"} </button>
+            <button >
+              <i className="fas fa-angle-right" id="next"></i>
+            </button>
+            <button >
+              <span>
+                <i className="fas fa-angle-double-right" id="last"></i>
+              </span>
+            </button>
           </p>
         </Zoom>
       </section>

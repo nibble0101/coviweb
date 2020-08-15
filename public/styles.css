@@ -163,6 +163,7 @@ body {
   cursor: pointer;
   box-shadow: 20px 30px 15px rgba(0, 0, 0, 0.4);
 }
+
 .pagination .controls {
   display: flex;
   justify-content: center;
@@ -227,9 +228,15 @@ body {
   background-color: #484a56;
   padding: 1em;
 }
-
+.footer .wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
 .footer p {
   text-align: center;
+  padding: 1em 0;
 }
 .footer .footer-data-source a {
   text-decoration: none;
@@ -239,6 +246,31 @@ body {
 }
 .footer .footer-data-source a:hover {
   color: yellow;
+}
+.footer .label{
+    color: yellowgreen;
+}
+.footer .social-media a{
+    padding: 1em;
+    text-decoration: none;
+    margin-right: 0.5em;
+    color: #6cd6e6;
+    transition: color 1000ms linear;
+}
+.footer .social-media a:hover{
+    color: yellow;
+}
+.footer-copyright{
+    margin: 3em 0 0.5em 0;
+    font-size: smaller;
+}
+.footer-copyright a{
+    color: #6cd6e6;
+    text-decoration: none;
+    transition: color 1000ms linear;
+}
+.footer-copyright a:hover{
+    color: yellow;
 }
 .press {
   width: 65%;
@@ -323,7 +355,7 @@ body {
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: yellowgreen;
+    background-color: brown;
     border-radius: 10px;
 }
 
