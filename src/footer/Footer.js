@@ -8,10 +8,13 @@ function Footer(props) {
   const ref = React.useRef(formatDateTime(date));
   return (
     <footer className="footer">
-      <div className = "wrapper">
+      <div className="wrapper">
         <p className="footer-data-source">
           <span className="label"> Data Source </span>:{" "}
-          <a href={url}> NOVEL CoVID19 API </a>
+          <a href={url} target="_blank" rel="noreferrer noopener">
+            {" "}
+            NOVEL CoVID19 API{" "}
+          </a>
         </p>
         <p className="footer-retrieval-date">
           {" "}
@@ -19,16 +22,33 @@ function Footer(props) {
         </p>
         <p className="social-media">
           <span className="label">Share: </span>
-          <a href="https://twitter.com/?lang=en">
+          <a
+            href="https://twitter.com/?lang=en"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <i class="fab fa-twitter" aria-hidden="true"></i>
           </a>
-          <a href="https://www.facebook.com/">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <i class="fab fa-facebook" aria-hidden="true"></i>
           </a>
         </p>
       </div>
       <p className="footer-copyright">
-        Copyright <span className = "copyright-symbol"> {"\u00A9"} </span>  <a href = "https://github.com/nibble0101"> Joseph Mawa {" "} </a> {year > 2020 ? `2020 - ${year}` : year}
+        Copyright <span className="copyright-symbol"> {"\u00A9"} </span>{" "}
+        <a
+          href="https://github.com/nibble0101"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          {" "}
+          Joseph Mawa{" "}
+        </a>{" "}
+        {year > 2020 ? `2020 - ${year}` : year}
       </p>
     </footer>
   );
