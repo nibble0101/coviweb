@@ -2,7 +2,6 @@ import React, { useEffect, useState, useReducer } from "react";
 import {json} from "d3";
 import { paginationReducer } from "./page-reducer";
 
-const urlPress = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=health&fq=headline:(\"covid-19\")&api-key=";
 const urlCountries = "https://disease.sh/v2/countries";
 const urlAggregate = "https://disease.sh/v2/all";
 const urlMap = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
@@ -13,15 +12,13 @@ function ContextProvider(props) {
   const [activeMenu, setActiveMenu] = useState("dashboard");
   const [mapData, setMapData] = useState(null);
   const [aggregateData, setAggregateData] = useState(null);
-  const [articles, setArticles] = useState(null);
   useEffect(() => {
-    Promise.all([json(urlCountries), json(urlAggregate), json(urlMap), json(urlPress + process.env.REACT_APP_API_KEY)])
+    Promise.all([json(urlCountries), json(urlAggregate), json(urlMap)])
     .then(data => {
         pageDispatch({ type: "set-pages", payload: data[0].length });
         setData(data[0]);
         setAggregateData(data[1]);
         setMapData(data[2]);
-        setArticles(data[3].response)
     }).catch(error => console.log(error.message));
   }, []);
   function currentPageHandler(e) {
@@ -70,7 +67,6 @@ function ContextProvider(props) {
         activeMenu,
         mapData,
         aggregateData,
-        articles,
         currentPageHandler,
         nextChapterHandler,
         previousChapterHandler,
