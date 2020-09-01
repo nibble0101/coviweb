@@ -5,22 +5,29 @@ import { context } from "../../store";
 function Pagination(props) {
   const {
     pages,
-    currentPageHandler,
     nextChapterHandler,
     previousChapterHandler,
+    currentPageHandler,
   } = useContext(context);
 
   const pageElements = [];
-
   if (pages) {
-    const { chapters, currentChapter } = pages;
+    const { chapters, currentChapter, currentPage } = pages;
     const { from, to } = chapters[currentChapter - 1];
     for (let i = from; i <= to; i++) {
-      pageElements.push(
-        <button key={"page" + i} value={i}>
-          {i}
-        </button>
-      );
+      if (i === currentPage) {
+        pageElements.push(
+          <button
+            key={"page" + i}
+            value = {i}
+            style={{ backgroundColor: "grey", color: "yellow" }}
+          >
+            {i}
+          </button>
+        );
+      } else {
+        pageElements.push(<button key={"page" + i} value = {i}>{i}</button>);
+      }
     }
   }
   return (
@@ -29,25 +36,25 @@ function Pagination(props) {
       <section className="controls">
         <Zoom>
           <p className="previous " onClick={previousChapterHandler}>
-            <button >
+            <button>
               <i className="fas fa-angle-double-left" id="previous-chapter"></i>
             </button>
-            <button >
+            <button>
               <i className="fas fa-angle-left" id="previous-page"></i>
             </button>
           </p>
         </Zoom>
 
-        <p className="pages" onClick={null}>
+        <p className="pages" onClick={currentPageHandler}>
           {pages && pageElements}
         </p>
 
         <Zoom>
           <p className="next" onClick={nextChapterHandler}>
-            <button >
+            <button>
               <i className="fas fa-angle-right" id="next-page"></i>
             </button>
-            <button >
+            <button>
               <span>
                 <i className="fas fa-angle-double-right" id="next-chapter"></i>
               </span>

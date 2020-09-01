@@ -15,29 +15,29 @@ function ContextProvider(props) {
   useEffect(() => {
     Promise.all([json(urlCountries), json(urlAggregate), json(urlMap)])
     .then(data => {
-        pageDispatch({ type: "set-pages", payload: data[0].length });
+        pageDispatch({ type: "SET_PAGES", payload: data[0].length });
         setData(data[0]);
         setAggregateData(data[1]);
         setMapData(data[2]);
     }).catch(error => console.log(error.message));
   }, []);
   function currentPageHandler(e) {
-    pageDispatch({ type: "set-current-page", payload: +e.target.value });
+    pageDispatch({ type: "SET_CURRENT_PAGE", payload: +e.target.value });
   }
   function nextChapterHandler(e) {
     const id = e.target.id;
     if (id === "next-page") {
-      pageDispatch({ type: "set-next-page" });
+      pageDispatch({ type: "SET_NEXT_PAGE" });
     } else if (id === "next-chapter") {
-      pageDispatch({ type: "set-next-chapter" });
+      pageDispatch({ type: "SET_NEXT_CHAPTER" });
     }
   }
   function previousChapterHandler(e) {
     const id = e.target.id;
     if (id === "previous-page") {
-      pageDispatch({ type: "set-previous-page" });
+      pageDispatch({ type: "SET_PREVIOUS_PAGE" });
     } else if (id === "previous-chapter") {
-      pageDispatch({ type: "set-previous-chapter" });
+      pageDispatch({ type: "SET_PREVIOUS_CHAPTER" });
     }
   }
 

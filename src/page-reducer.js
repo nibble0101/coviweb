@@ -2,13 +2,13 @@ const COUNTRIES_PER_PAGE = 6;
 const PAGES_PER_CHAPTER = 5;
 function paginationReducer(state, action) {
   const { type } = action;
-  if (type === "set-pages") {
+  if (type === "SET_PAGES") {
     return {
       chapters: setPaginationChapters(action.payload),
       currentChapter: 1,
       currentPage: 1,
     };
-  } else if (type === "set-next-page") {
+  } else if (type === "SET_NEXT_PAGE") {
     const {chapters, currentChapter, currentPage} = state;
     const {to} = chapters[currentChapter - 1];
     if(currentPage === to){
@@ -19,7 +19,7 @@ function paginationReducer(state, action) {
     }
 
     return { ...state, currentPage: currentPage + 1 };
-  } else if (type === "set-previous-page") {
+  } else if (type === "SET_PREVIOUS_PAGE") {
     const {chapters, currentChapter, currentPage} = state;
     const { from } = chapters[currentChapter - 1];
     if(currentPage === 1){
@@ -36,7 +36,7 @@ function paginationReducer(state, action) {
       ...state,
       currentPage: currentPage - 1
     };
-  } else if (type === "set-next-chapter") {
+  } else if (type === "SET_NEXT_CHAPTER") {
     if (state.currentChapter === state.chapters.length) {
       return state;
     }
@@ -47,7 +47,7 @@ function paginationReducer(state, action) {
       currentChapter: state.currentChapter + 1,
       currentPage: from,
     };
-  } else if (type === "set-previous-chapter") {
+  } else if (type === "SET_PREVIOUS_CHAPTER") {
     if (state.currentChapter === 1) {
       return state;
     }
@@ -58,7 +58,10 @@ function paginationReducer(state, action) {
       currentChapter: state.currentChapter - 1,
       currentPage: from,
     };
-  } else {
+  }else if(type === "SET_CURRENT_PAGE"){
+      return {...state, currentPage: action.payload}
+
+  }else {
     return state;
   }
 }
