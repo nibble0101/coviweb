@@ -1,11 +1,11 @@
 import React from "react";
-import Zoom from "react-reveal/Zoom";
-import {format} from "d3";
+import Fade from "react-reveal/Fade";
+import { format } from "d3";
 
 function Country(props) {
   const { country } = props;
   return (
-    <Zoom>
+    <Fade>
       <div className="country">
         <p className="heading">
           <span>
@@ -35,7 +35,7 @@ function Country(props) {
           <span className="number">{format(",")(country.population)}</span>
         </p>
       </div>
-    </Zoom>
+    </Fade>
   );
 }
 export default Country;

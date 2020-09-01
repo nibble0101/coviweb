@@ -181,7 +181,9 @@ body {
 .pagination .next button {
   margin: 0 1em;
 }
-
+.pagination button.active-page{
+    background-color: burlywood;
+}
 .about-section {
   padding: 1em;
   color: whitesmoke;
