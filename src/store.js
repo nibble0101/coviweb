@@ -26,8 +26,8 @@ function ContextProvider(props) {
   }
   function nextChapterHandler(e) {
     const id = e.target.id;
-    if (id === "last") {
-      pageDispatch({ type: "set-last-chapter" });
+    if (id === "next-page") {
+      pageDispatch({ type: "set-next-page" });
     } else if (id === "next") {
       pageDispatch({ type: "set-next-chapter" });
     }

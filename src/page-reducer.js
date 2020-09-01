@@ -8,9 +8,18 @@ function paginationReducer(state, action) {
       currentChapter: 1,
       currentPage: 1,
     };
-  } else if (type === "set-first-chapter") {
-    return { ...state, currentChapter: 1, currentPage: 1 };
-  } else if (type === "set-last-chapter") {
+  } else if (type === "set-next-page") {
+    const {chapters, currentChapter, currentPage} = state;
+    const {to} = chapters[currentChapter - 1];
+    if(currentPage === to){
+        if(currentChapter === chapters.length){
+            return;
+        }
+        return {...state, currentPage: currentPage + 1, currentChapter: currentChapter + 1}
+    }
+
+    return { ...state, currentPage: currentPage + 1 };
+  } else if (type === "set-previous-page") {
     const { chapters } = state;
     const { from } = chapters[chapters.length - 1];
     return {

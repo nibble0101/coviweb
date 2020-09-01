@@ -30,26 +30,26 @@ function Pagination(props) {
         <Zoom>
           <p className="previous " onClick={previousChapterHandler}>
             <button >
-              <i className="fas fa-angle-double-left" id="first"></i>
+              <i className="fas fa-angle-double-left" id="previous"></i>
             </button>
             <button >
-              <i className="fas fa-angle-left" id="previous"></i>
+              <i className="fas fa-angle-left" id="previous-page"></i>
             </button>
           </p>
         </Zoom>
 
-        <p className="pages" onClick={currentPageHandler}>
+        <p className="pages" onClick={null}>
           {pages && pageElements}
         </p>
 
         <Zoom>
           <p className="next" onClick={nextChapterHandler}>
             <button >
-              <i className="fas fa-angle-right" id="next"></i>
+              <i className="fas fa-angle-right" id="next-page"></i>
             </button>
             <button >
               <span>
-                <i className="fas fa-angle-double-right" id="last"></i>
+                <i className="fas fa-angle-double-right" id="next"></i>
               </span>
             </button>
           </p>
