@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade";
 import { context } from "../../store";
 
 function Pagination(props) {
@@ -34,7 +34,7 @@ function Pagination(props) {
     <div className="pagination">
       <h1 className="title">PAGES</h1>
       <section className="controls">
-        <Zoom>
+        <Fade>
           <p className="previous " onClick={previousChapterHandler}>
             <button>
               <i className="fas fa-angle-double-left" id="previous-chapter"></i>
@@ -43,13 +43,13 @@ function Pagination(props) {
               <i className="fas fa-angle-left" id="previous-page"></i>
             </button>
           </p>
-        </Zoom>
+        </Fade>
 
         <p className="pages" onClick={currentPageHandler}>
           {pages && pageElements}
         </p>
 
-        <Zoom>
+        <Fade>
           <p className="next" onClick={nextChapterHandler}>
             <button>
               <i className="fas fa-angle-right" id="next-page"></i>
@@ -60,7 +60,7 @@ function Pagination(props) {
               </span>
             </button>
           </p>
-        </Zoom>
+        </Fade>
       </section>
     </div>
   );

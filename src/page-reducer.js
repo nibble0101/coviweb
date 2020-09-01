@@ -9,36 +9,40 @@ function paginationReducer(state, action) {
       currentPage: 1,
     };
   } else if (type === "SET_NEXT_PAGE") {
-    const {chapters, currentChapter, currentPage} = state;
-    const {to} = chapters[currentChapter - 1];
-    if(currentPage === to){
-        if(currentChapter === chapters.length){
-            return {...state};
-        }
-        return {...state, currentPage: currentPage + 1, currentChapter: currentChapter + 1}
+    const { chapters, currentChapter, currentPage } = state;
+    const { to } = chapters[currentChapter - 1];
+    if (currentPage === to) {
+      if (currentChapter === chapters.length) {
+        return { ...state };
+      }
+      return {
+        ...state,
+        currentPage: currentPage + 1,
+        currentChapter: currentChapter + 1,
+      };
     }
 
     return { ...state, currentPage: currentPage + 1 };
   } else if (type === "SET_PREVIOUS_PAGE") {
-    const {chapters, currentChapter, currentPage} = state;
+    const { chapters, currentChapter, currentPage } = state;
     const { from } = chapters[currentChapter - 1];
-    if(currentPage === 1){
-        return {...state} ;
+    if (currentPage === 1) {
+      return { ...state };
     }
-    if(currentPage === from){
-        return {
-            ...state,
-            currentPage: currentPage - 1,
-            currentChapter: currentChapter - 1
-        }
+    if (currentPage === from) {
+      return {
+        ...state,
+        currentPage: currentPage - 1,
+        currentChapter: currentChapter - 1,
+      };
     }
     return {
       ...state,
-      currentPage: currentPage - 1
+      currentPage: currentPage - 1,
     };
   } else if (type === "SET_NEXT_CHAPTER") {
     if (state.currentChapter === state.chapters.length) {
-      return state;
+      return { ...state };
     }
     const { chapters, currentChapter } = state;
     const { from } = chapters[currentChapter];
@@ -49,7 +53,7 @@ function paginationReducer(state, action) {
     };
   } else if (type === "SET_PREVIOUS_CHAPTER") {
     if (state.currentChapter === 1) {
-      return state;
+      return { ...state };
     }
     const { chapters, currentChapter } = state;
     const { from } = chapters[currentChapter - 2];
@@ -58,11 +62,10 @@ function paginationReducer(state, action) {
       currentChapter: state.currentChapter - 1,
       currentPage: from,
     };
-  }else if(type === "SET_CURRENT_PAGE"){
-      return {...state, currentPage: action.payload}
-
-  }else {
-    return state;
+  } else if (type === "SET_CURRENT_PAGE") {
+    return { ...state, currentPage: action.payload };
+  } else {
+    return { ...state };
   }
 }
 
