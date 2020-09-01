@@ -28,15 +28,15 @@ function ContextProvider(props) {
     const id = e.target.id;
     if (id === "next-page") {
       pageDispatch({ type: "set-next-page" });
-    } else if (id === "next") {
+    } else if (id === "next-chapter") {
       pageDispatch({ type: "set-next-chapter" });
     }
   }
   function previousChapterHandler(e) {
     const id = e.target.id;
-    if (id === "first") {
-      pageDispatch({ type: "set-first-chapter" });
-    } else if (id === "previous") {
+    if (id === "previous-page") {
+      pageDispatch({ type: "set-previous-page" });
+    } else if (id === "previous-chapter") {
       pageDispatch({ type: "set-previous-chapter" });
     }
   }

@@ -13,19 +13,28 @@ function paginationReducer(state, action) {
     const {to} = chapters[currentChapter - 1];
     if(currentPage === to){
         if(currentChapter === chapters.length){
-            return;
+            return {...state};
         }
         return {...state, currentPage: currentPage + 1, currentChapter: currentChapter + 1}
     }
 
     return { ...state, currentPage: currentPage + 1 };
   } else if (type === "set-previous-page") {
-    const { chapters } = state;
-    const { from } = chapters[chapters.length - 1];
+    const {chapters, currentChapter, currentPage} = state;
+    const { from } = chapters[currentChapter - 1];
+    if(currentPage === 1){
+        return {...state} ;
+    }
+    if(currentPage === from){
+        return {
+            ...state,
+            currentPage: currentPage - 1,
+            currentChapter: currentChapter - 1
+        }
+    }
     return {
       ...state,
-      currentChapter: state.chapters.length,
-      currentPage: from,
+      currentPage: currentPage - 1
     };
   } else if (type === "set-next-chapter") {
     if (state.currentChapter === state.chapters.length) {
@@ -49,8 +58,8 @@ function paginationReducer(state, action) {
       currentChapter: state.currentChapter - 1,
       currentPage: from,
     };
-  } else if (type === "set-current-page") {
-    return { ...state, currentPage: action.payload };
+  } else {
+    return state;
   }
 }
 

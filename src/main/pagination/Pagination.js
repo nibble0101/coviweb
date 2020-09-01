@@ -30,7 +30,7 @@ function Pagination(props) {
         <Zoom>
           <p className="previous " onClick={previousChapterHandler}>
             <button >
-              <i className="fas fa-angle-double-left" id="previous"></i>
+              <i className="fas fa-angle-double-left" id="previous-chapter"></i>
             </button>
             <button >
               <i className="fas fa-angle-left" id="previous-page"></i>
@@ -49,7 +49,7 @@ function Pagination(props) {
             </button>
             <button >
               <span>
-                <i className="fas fa-angle-double-right" id="next"></i>
+                <i className="fas fa-angle-double-right" id="next-chapter"></i>
               </span>
             </button>
           </p>
