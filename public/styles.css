@@ -90,12 +90,50 @@ body {
 .hamburger-menu-icon {
   display: none;
 }
+/* Styling search component */
+
+.search-input-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+.inner-search-input-wrapper{
+    position: relative;
+}
+.search-icon{
+    position: absolute;
+    left: 10px;
+    top: 10px ;
+    font-size: x-small;
+    z-index: 10;
+    
+}
+.clear-search-icon{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: x-small;
+    z-index: 10;
+}
+.input-field{
+    width: 300px;
+    padding: 10px 5px 10px 30px;
+    border-radius: 50px;
+    background-color: #484a56;
+    border: none;
+    outline-width: 0.1px;
+}
+.input-field:focus{
+    box-shadow: 1px 2px 5px #484a56;
+}
 .main {
   padding: 1em;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
-  height: 400px; /*This is to remove the jumping effect */
+  min-height: 400px; /*This is to remove the jumping effect */
 }
 
 .main .country {
