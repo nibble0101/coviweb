@@ -10,6 +10,10 @@ function Display(props) {
   const queryHandle = (e) => {
     setQuery(e.target.value);
   };
+  const clearQueryHandle = (e) => {
+      setQuery("");
+      filteredCountries = undefined;
+  }
   let countries, filteredCountries;
   if (data && pages) {
     const from = COUNTRIES_PER_PAGE * (pages.currentPage - 1);
@@ -37,7 +41,7 @@ function Display(props) {
             placeholder="Search"
             className = "input-field"
           />
-          <span className = "clear-search-icon">
+          <span className = "clear-search-icon" onClick = {clearQueryHandle}>
             <i class="fas fa-times-circle"></i>
           </span>
         </span>
