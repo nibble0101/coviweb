@@ -10,13 +10,19 @@ function Display(props) {
   const queryHandle = (e) => {
     setQuery(e.target.value);
   };
-  let countries;
+  let countries, filteredCountries;
   if (data && pages) {
     const from = COUNTRIES_PER_PAGE * (pages.currentPage - 1);
     const to = COUNTRIES_PER_PAGE * pages.currentPage;
     countries = data.slice(from, to);
   }
   if (!countries) return null;
+  if (query) {
+    filteredCountries = data.filter((country) => {
+      const regx = new RegExp("^" + query, "mig");
+      return regx.test(country.country);
+    });
+  }
   return (
     <React.Fragment>
       <div>
@@ -34,11 +40,15 @@ function Display(props) {
         </span>
       </div>
       <div className="main">
-        {countries.map((country, i) => {
-          return <Country country={country} key={Math.random()} />;
-        })}
+        {query
+          ? filteredCountries.map((country, i) => {
+              return <Country country={country} key={Math.random()} />;
+            })
+          : countries.map((country, i) => {
+              return <Country country={country} key={Math.random()} />;
+            })}
       </div>
-      <Pagination />
+      {!query && <Pagination />}
     </React.Fragment>
   );
 }
