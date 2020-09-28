@@ -7,6 +7,9 @@ import { COUNTRIES_PER_PAGE } from "../../page-reducer";
 function Display(props) {
   const { data, pages } = useContext(context);
   const [query, setQuery] = useState("");
+  const queryHandle = (e) => {
+    setQuery(e.target.value);
+  };
   let countries;
   if (data && pages) {
     const from = COUNTRIES_PER_PAGE * (pages.currentPage - 1);
@@ -17,7 +20,18 @@ function Display(props) {
   return (
     <React.Fragment>
       <div>
-        <input type="text" placeholder="Search" />
+        <span>
+          <i class="fas fa-search"></i>
+        </span>
+        <input
+          type="text"
+          value={query}
+          onChange={queryHandle}
+          placeholder="Search"
+        />
+        <span>
+          <i class="fas fa-times-circle"></i>
+        </span>
       </div>
       <div className="main">
         {countries.map((country, i) => {
