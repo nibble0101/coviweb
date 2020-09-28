@@ -25,18 +25,21 @@ function Display(props) {
   }
   return (
     <React.Fragment>
-      <div>
-        <span>
-          <i class="fas fa-search"></i>
-        </span>
-        <input
-          type="text"
-          value={query}
-          onChange={queryHandle}
-          placeholder="Search"
-        />
-        <span>
-          <i class="fas fa-times-circle"></i>
+      <div className = "search-input-wrapper">
+        <span className = "inner-search-input-wrapper">
+          <span className = "search-icon">
+            <i class="fas fa-search"></i>
+          </span>
+          <input
+            type="text"
+            value={query}
+            onChange={queryHandle}
+            placeholder="Search"
+            className = "input-field"
+          />
+          <span className = "clear-search-icon">
+            <i class="fas fa-times-circle"></i>
+          </span>
         </span>
       </div>
       <div className="main">
