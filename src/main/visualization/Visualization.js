@@ -22,11 +22,10 @@ function Visualization(props) {
       return;
     }
     const formatDate = d3.timeFormat("%B %d, %Y");
-    const formatDateTime = d3.timeFormat("%B %d, %Y  %H:%M:%S %p");
     const dateToday = new Date();
     const wrapper = d3.select("#visualization-wrapper");
 
-    const toolTip = wrapper.append("div").attr("class", "tooltip");
+    wrapper.append("div").attr("class", "tooltip");
     const svg = wrapper
       .append("svg")
       .attr("width", width + padLeft + padRight)
@@ -131,7 +130,7 @@ function Visualization(props) {
     colorScale
       .domain([lowestCases, highestCases])
       .interpolator(d3.interpolatePiYG);
-    const paths = svg
+    svg
       .selectAll("path")
       .data(countries.features)
       .enter()
