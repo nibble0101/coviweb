@@ -135,7 +135,6 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1em;
   min-height: 400px; /*This is to remove the jumping effect */
-  align-items: center;
 }
 
 .main .country {
