@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useReducer } from "react";
-import {json} from "d3";
+import { json } from "d3";
 import { paginationReducer } from "./page-reducer";
 
 const urlCountries = "https://disease.sh/v2/countries";
@@ -14,12 +14,13 @@ function ContextProvider(props) {
   const [aggregateData, setAggregateData] = useState(null);
   useEffect(() => {
     Promise.all([json(urlCountries), json(urlAggregate), json(urlMap)])
-    .then(data => {
+      .then((data) => {
         pageDispatch({ type: "SET_PAGES", payload: data[0].length });
         setData(data[0]);
         setAggregateData(data[1]);
         setMapData(data[2]);
-    }).catch(error => console.log(error.message));
+      })
+      .catch((error) => console.log(error.message));
   }, []);
   function currentPageHandler(e) {
     pageDispatch({ type: "SET_CURRENT_PAGE", payload: +e.target.value });
@@ -56,6 +57,8 @@ function ContextProvider(props) {
       case "press":
         setActiveMenu("press");
         break;
+      default:
+        setActiveMenu("dashboard");
     }
   }
 
