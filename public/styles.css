@@ -394,7 +394,6 @@ body {
 }
 .new-york-times .paragraph a {
   color: #6cd6e6;
-  font-family: "Poiret One", cursive;
   transition: color 500ms ease-in-out;
 }
 .new-york-times .paragraph a:hover {
