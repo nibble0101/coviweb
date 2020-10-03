@@ -3,8 +3,6 @@ import Country from "./Country";
 import { context } from "../../store";
 import Pagination from "../pagination/Pagination";
 import { COUNTRIES_PER_PAGE } from "../../page-reducer";
-import { style } from "d3";
-const filterStyle = {alignItems: 'center'}
 function Display(props) {
   const { data, pages } = useContext(context);
   const [query, setQuery] = useState("");
