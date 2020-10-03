@@ -106,7 +106,7 @@ body {
     left: 10px;
     top: 10px ;
     font-size: x-small;
-    z-index: 10;
+    z-index: 5;
     
 }
 .clear-search-icon{
@@ -115,7 +115,7 @@ body {
     top: 10px;
     cursor: pointer;
     font-size: x-small;
-    z-index: 10;
+    z-index: 5;
 }
 .input-field{
     width: 300px;
@@ -491,6 +491,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 10;
   }
 
   .hamburger-menu-icon {
