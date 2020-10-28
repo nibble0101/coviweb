@@ -9,6 +9,7 @@ function Menu(props) {
   const hambugerClickHandler = React.useCallback(() => {
     setIsOpen(!isOpen);
     document.getElementById("menu").classList.toggle("display-menu");
+    document.body.classList.toggle('lock-scroll');
   }, [isOpen]);
   return (
     <div className="menu">
