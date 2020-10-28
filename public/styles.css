@@ -125,6 +125,20 @@ body {
     border: none;
     outline-width: 0.1px;
 }
+/* Styling placeholder text before focus */
+
+.input-field::-webkit-input-placeholder { /* Edge */
+  color: white;
+}
+
+.input-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+}
+
+.input-field::placeholder {
+  color: white;
+  opacity: 1; /* This is for Mozilla because it applies reduced opacity by default */
+}
 .input-field:focus{
     box-shadow: 1px 2px 5px #484a56;
     color: white;
