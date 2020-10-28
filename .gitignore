@@ -11,6 +11,8 @@
 # production
 /build
 /src/main/press/api-key.js
+
+# API keys
 /.env
 
 # misc
