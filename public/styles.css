@@ -513,6 +513,13 @@ body {
     cursor: pointer;
     margin: 0 1em;
   }
+  .lock-scroll{
+     /*
+    Stops the body from being scrollable in mobile view 
+    if the hamburger menu is open.
+    */
+    overflow: hidden; 
+  }
   .header .menu ul.display-menu {
     opacity: 1;
     width: 100%;

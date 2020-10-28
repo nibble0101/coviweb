@@ -9,6 +9,11 @@ function Menu(props) {
   const hambugerClickHandler = React.useCallback(() => {
     setIsOpen(!isOpen);
     document.getElementById("menu").classList.toggle("display-menu");
+    /*
+    Stops the body from being scrollable in mobile view 
+    if the hamburger menu is open.
+    */
+    document.body.classList.toggle("lock-scroll"); 
   }, [isOpen]);
   return (
     <div className="menu">
