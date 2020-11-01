@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useReducer } from "react";
 import { json } from "d3";
 import { paginationReducer } from "./page-reducer";
+import {initialPressState, pressReducer} from "./press-reducer";
+import urlFactory from "./url-factory";
+
 
 const urlCountries = "https://disease.sh/v2/countries";
 const urlAggregate = "https://disease.sh/v2/all";
@@ -9,12 +12,13 @@ const urlMap = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 const context = React.createContext();
 
 function ContextProvider(props) {
-  
   const [data, setData] = useState(null);
   const [pages, pageDispatch] = useReducer(paginationReducer, null);
+  const [press, pressDispatch] = useReducer(pressReducer, initialPressState);
   const [activeMenu, setActiveMenu] = useState("dashboard");
   const [mapData, setMapData] = useState(null);
   const [aggregateData, setAggregateData] = useState(null);
+  
 
   useEffect(() => {
     Promise.all([json(urlCountries), json(urlAggregate), json(urlMap)])
@@ -26,6 +30,19 @@ function ContextProvider(props) {
       })
       .catch((error) => console.log(error.message));
   }, []);
+  
+  useEffect(() => {
+    urlFactory.currentPage = press.page;
+    const url = urlFactory.url + process.env.REACT_APP_API_KEY;
+    async function fetchArticles() {
+      const data = await fetch(url).then(response => response.json());
+      pressDispatch({type: "SET_ARTICLES", articles: data.response.docs});
+      // setMaxPage(data.response.meta.hits);
+      // setIsLoading(false);
+    }
+    fetchArticles();
+  }, [press.page]);
+
 
   function currentPageHandler(e) {
     pageDispatch({ type: "SET_CURRENT_PAGE", payload: +e.target.value });
@@ -69,6 +86,10 @@ function ContextProvider(props) {
     }
   }
 
+  function setNextPressPage() {
+    pressDispatch({type: "SET_PAGE"});
+  }
+
   return (
     <context.Provider
       value={{
@@ -77,10 +98,12 @@ function ContextProvider(props) {
         activeMenu,
         mapData,
         aggregateData,
+        press,
         currentPageHandler,
         nextChapterHandler,
         previousChapterHandler,
         menuClickHandler,
+        setNextPressPage,
       }}
     >
       {props.children}
