@@ -1,14 +1,23 @@
-import React, { useContext, useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Fade from "react-reveal/Fade";
 import NewYorkTimes from "./NewYorkTimes";
 import LoadMoreArticles from "./LoadMoreArticles";
 import Loader from "../../loader/Loader";
 import urlFactory from "./url-factory";
-import { max } from "d3";
 
+/*
+Determines how long data which has been stored in local
+storage should remain valid in milliseconds.
+*/
+const LOCAL_STORAGE_LIFE_SPAN = 24 * 60 * 60 * 1000;
 function readPage() {
   const articles = JSON.parse(localStorage.getItem("articles"));
+
   if (articles && articles.length) {
+    const timeDelta = Date.now() - articles.setDate;
+    if (timeDelta > LOCAL_STORAGE_LIFE_SPAN) {
+      return 1;
+    }
     const page = articles.length / 10;
     if (Number.isInteger(page)) {
       return page - 1;
@@ -23,16 +32,16 @@ function Press(props) {
   const [maxPage, setMaxPage] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const pageHandle = useCallback(() => {
-    if(maxPage === articles.length){
-        return;
+    if (maxPage === articles.length) {
+      return;
     }
     setPage((prevPage) => prevPage + 1);
-  });
+  }, [maxPage, articles]);
 
   useEffect(() => {
     const cachedData = JSON.parse(localStorage.getItem("articles"));
     if (cachedData && cachedData.length) {
-      setIsLoading(true)
+      setIsLoading(true);
       const offsetPage = cachedData.length / 10;
       if (Number.isInteger(offsetPage)) {
         if (page === offsetPage - 1) {
