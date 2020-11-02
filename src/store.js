@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useReducer } from "react";
 import { json } from "d3";
 import { paginationReducer } from "./page-reducer";
-import {initialPressState, pressReducer} from "./press-reducer";
+import { initialPressState, pressReducer } from "./press-reducer";
 import urlFactory from "./url-factory";
-
 
 const urlCountries = "https://disease.sh/v2/countries";
 const urlAggregate = "https://disease.sh/v2/all";
@@ -18,7 +17,6 @@ function ContextProvider(props) {
   const [activeMenu, setActiveMenu] = useState("dashboard");
   const [mapData, setMapData] = useState(null);
   const [aggregateData, setAggregateData] = useState(null);
-  
 
   useEffect(() => {
     Promise.all([json(urlCountries), json(urlAggregate), json(urlMap)])
@@ -30,19 +28,26 @@ function ContextProvider(props) {
       })
       .catch((error) => console.log(error.message));
   }, []);
-  
+
   useEffect(() => {
+    pressDispatch({ type: "SET_LOADING_FLAG", isLoading: true });
     urlFactory.currentPage = press.page;
     const url = urlFactory.url + process.env.REACT_APP_API_KEY;
     async function fetchArticles() {
-      const data = await fetch(url).then(response => response.json());
-      pressDispatch({type: "SET_ARTICLES", articles: data.response.docs});
-      // setMaxPage(data.response.meta.hits);
-      // setIsLoading(false);
+      try {
+        const data = await fetch(url).then((response) => response.json());
+        pressDispatch({ type: "SET_ARTICLES", articles: data.response.docs });
+        pressDispatch({
+          type: "SET_TOTAL_PAGE_COUNT",
+          pageCount: data.response.meta.hits,
+        });
+        pressDispatch({ type: "SET_LOADING_FLAG", isLoading: false });
+      } catch (error) {
+        console.log(error.message);
+      }
     }
     fetchArticles();
   }, [press.page]);
-
 
   function currentPageHandler(e) {
     pageDispatch({ type: "SET_CURRENT_PAGE", payload: +e.target.value });
@@ -87,7 +92,7 @@ function ContextProvider(props) {
   }
 
   function setNextPressPage() {
-    pressDispatch({type: "SET_PAGE"});
+    pressDispatch({ type: "SET_PAGE" });
   }
 
   return (
