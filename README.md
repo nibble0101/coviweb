@@ -1,6 +1,6 @@
 # coviWEB
 
-This is a single page application which displays up-to-date COVID-19 statistics built using [React.js](https://reactjs.org/). The project is hosted live on [Netlify](https://app.netlify.com) and it can be viewed [Here](https://coviweb.netlify.app/). 
+This is a single page application which displays up-to-date COVID-19 statistics built using [React.js](https://reactjs.org/). The project is hosted live on [Netlify](https://app.netlify.com) and it can be viewed [Here](https://coviweb.netlify.app/).
 
 ## Data Source
 
@@ -17,6 +17,5 @@ In addition to using HTML, CSS and React.js for building this project, i have al
 ## Live Project
 
 The project is hosted live [Here](https://coviweb.netlify.app/) on Netlify.
-
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/387bbe70-f6a6-46a3-ae45-7eb2fd1c2260/deploy-status)](https://app.netlify.com/sites/coviweb/deploys)
